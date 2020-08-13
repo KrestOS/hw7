@@ -9,8 +9,24 @@ public class Plate {
         return food;
     }
 
-    public void decreaseFood(int amount) {
-        food -= amount;
+    public void addFood(int amount){
+        if (amount < 0){
+            return;
+        }else{
+
+            food += amount;
+            System.out.printf("В тарелку добавлено %d еды, теперь там %d еды",amount,food);
+        }
+    }
+    public boolean decreaseFood(int amount) {
+        if (food >= amount){
+
+            food -= amount;
+            return true;
+
+        }else {
+            return false;
+        }
     }
 
     @Override

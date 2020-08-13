@@ -1,7 +1,8 @@
 public class Cat {
 
     private String name;
-
+    private int appetite = 10;
+    private boolean full;
 
     public Cat(String name) {
         this.name = name;
@@ -11,9 +12,24 @@ public class Cat {
         return name;
     }
 
+    public boolean isFull(){
+
+        return full;
+
+    }
+
     public void eat(Plate plate) {
-        System.out.println(name + " eat");
-        plate.decreaseFood(10);
+        if (plate.decreaseFood(appetite)){
+
+            full = true;
+            System.out.println(name + " eat");
+
+        }else {
+
+            System.out.println(name + " no eat");
+
+        }
+
     }
 
 }
